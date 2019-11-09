@@ -1,22 +1,4 @@
-const HEADER_BORDER_WIDTH = 10
-const BACKGROUND_COLOR = '#22313F'
-const TEXT_COLOR = '#BFCAD1'
-const PRIMARY_COLOR = '#6BCCEF'
-
-document.documentElement.style.setProperty('--header-border-width', HEADER_BORDER_WIDTH + 'px')
-document.documentElement.style.setProperty('--background-color', BACKGROUND_COLOR)
-document.documentElement.style.setProperty('--text-color', TEXT_COLOR)
-document.documentElement.style.setProperty('--primary-color', PRIMARY_COLOR)
-
-function setParticlesHeight() {
-	document.getElementById('particles').style.height = window.innerHeight - HEADER_BORDER_WIDTH + 'px'
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-	setParticlesHeight()
-
-	window.addEventListener('resize', setParticlesHeight)
-
+function initParticles() {
 	particlesJS('particles', {
 		"particles": {
 			"number": {
@@ -27,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			},
 			"color": {
-				"value": PRIMARY_COLOR
+				"value": "#6BCCEF"
 			},
 			"shape": {
 				"type": "circle",
@@ -126,7 +108,31 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		},
 		"retina_detect": true
-	});
+	})
+}
 
+function initWOW() {
 	new WOW().init();
-});
+}
+
+/** Fix vh unit issue on mobile browsers where the unit doesn't work properly */
+function setParticlesHeight() {
+	const particlesContainer = document.getElementById('particles')
+
+	if (particlesContainer.style.height !== (window.innerHeight - 10 + 'px')) {
+		particlesContainer.style.height = window.innerHeight - 10 + 'px'
+	}
+}
+
+function onResize() {
+	setParticlesHeight()
+}
+
+function onContentLoaded() {
+	setParticlesHeight()
+	initParticles()
+	initWOW()
+}
+
+window.addEventListener('resize', setParticlesHeight)
+document.addEventListener('DOMContentLoaded', onContentLoaded)

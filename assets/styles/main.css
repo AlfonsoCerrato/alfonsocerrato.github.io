@@ -7,7 +7,8 @@
     box-sizing: border-box;
 }
 ::selection {
-    color: white; background: var(--primary-color);
+    color: white;
+    background-color: #6BCCEF;
 }
 html {
     font-size: 16px;
@@ -23,8 +24,8 @@ html {
     }
 }
 body {
-    background-color: var(--background-color);
-    color: var(--text-color)
+    background-color: #22313F;
+    color: #BFCAD1;
 }
 html, body {
     overflow-x: hidden;
@@ -34,13 +35,14 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 main {
+    display: block; /* IE11 doesn't fully support main tag */
     max-width: 800px;
     margin: 48px auto;
     padding: 0 24px;
 }
 header {
     position: relative;
-    border-bottom: var(--header-border-width) solid var(--primary-color);
+    border-bottom: 10px solid #6BCCEF;
 }
 header h1 span {
     display: block;
@@ -49,7 +51,7 @@ header .arrow {
     position: absolute;
     bottom: 16px;
     right: 50%;
-    color: var(--primary-color);
+    color: #6BCCEF;
     transform: translateX(50%);
     animation: arrow 1000ms ease-in-out infinite alternate;
 }
@@ -76,7 +78,7 @@ header .content .image {
 header .content .image img {
     width: 11rem;
     height: auto;
-    border: 5px solid var(--primary-color);
+    border: 5px solid #6BCCEF;
     border-radius: 50%;
 }
 header .content .name {
@@ -84,7 +86,7 @@ header .content .name {
 }
 header .content .job-title {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #6BCCEF;
 }
 p:not(:last-of-type) {
     margin-bottom: 16px;
@@ -102,7 +104,7 @@ section .intro {
 }
 section .heading {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #6BCCEF;
     font-weight: bold;
     text-align: center;
 }
@@ -120,17 +122,17 @@ section .content .item .period {
     margin-bottom: 16px;
 }
 a {
-    color: var(--text-color);
+    color: #BFCAD1;
     text-decoration: underline;
 }
 a:hover, a:active, a:focus {
-    color: var(--primary-color);
+    color: #6BCCEF;
     text-decoration: none;
 }
 #particles {
-    height: calc(100vh - var(--header-border-width));
-    height: -moz-calc(100vh - var(--header-border-width));
-    height: -webkit-calc(100vh - var(--header-border-width));
+    height: calc(100vh - 10px);
+    height: -moz-calc(100vh - 10px);
+    height: -webkit-calc(100vh - 10px);
 }
 .two-columns {
     display: flex;
@@ -154,14 +156,14 @@ a:hover, a:active, a:focus {
     margin-right: 8px;
     margin-bottom: 16px;
     font-size: 1rem;
-    border: 1px solid var(--text-color);
+    border: 1px solid #BFCAD1;
     display: inline-block;
     border-radius: 4px;
 }
 footer {
     padding: 4px;
-    background-color: var(--primary-color);
-    color: var(--background-color);
+    background-color: #6BCCEF;
+    color: #22313F;
     text-align: center;
     font-size: .9rem;
     font-weight: bold;
