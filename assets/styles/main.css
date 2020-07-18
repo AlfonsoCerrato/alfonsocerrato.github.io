@@ -78,7 +78,7 @@ header .content .image {
 }
 header .content .image img {
     width: 11rem;
-    height: auto;
+    height: 11rem;
     border: 5px solid #6BCCEF;
     border-radius: 50%;
 }
