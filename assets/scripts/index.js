@@ -28,4 +28,10 @@
 
 	window.addEventListener('resize', onResize)
 	document.addEventListener('DOMContentLoaded', onContentLoaded)
+	document.querySelector('.arrow').addEventListener('click', function() {
+		window.scrollTo({
+			top: window.innerHeight,
+			behavior: 'smooth'
+		});
+	})
 })()
